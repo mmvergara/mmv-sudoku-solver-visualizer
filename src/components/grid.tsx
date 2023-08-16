@@ -11,10 +11,23 @@ const Grid = ({ sudokuGrid, activeCell }: props) => {
           return (
             <tr key={r}>
               {row.map((val, c) => {
-                const isActive =
+                const inRow = activeCell && activeCell[0] === r;
+                const inCol = activeCell && activeCell[1] === c;
+                const isExact =
                   activeCell && activeCell[0] === r && activeCell[1] === c;
+                let color = "";
+                if (inRow) {
+                  color = "row-h";
+                }
+                if (inCol) {
+                  color = "col-h";
+                }
+                if (isExact) {
+                  color = "exact-h";
+                }
+
                 return (
-                  <td key={c} className={isActive ? "highlight" : ""}>
+                  <td key={c} className={color}>
                     {val == 0 ? "" : val}
                   </td>
                 );

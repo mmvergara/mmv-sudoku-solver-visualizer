@@ -76,7 +76,9 @@ function App() {
   return (
     <main>
       <h1>Sudoku Solver</h1>
-      <button onClick={handleSolveClick}>Start Solve</button>
+      <button className="bg-cyan-800 p-1 rounded-sm" onClick={handleSolveClick}>
+        Start Solve
+      </button>
       <p>{status}</p>
       <Grid sudokuGrid={grid} activeCell={activeCell} />
     </main>
