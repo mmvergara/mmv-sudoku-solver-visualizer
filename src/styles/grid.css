@@ -1,0 +1,30 @@
+.highlight {
+  background-color: #526D8284;
+}
+table {
+  margin: 1em auto;
+  background-color: rgba(0, 0, 0, 0.216);
+  font-size: 2rem;
+}
+td {
+  height: 10vh;
+  width: 10vh;
+  border: 1px solid #176b8764;
+  text-align: center;
+}
+td:first-child {
+  border-left: solid;
+  border-left-color: #176b87;
+}
+td:nth-child(3n) {
+  border-right: solid;
+  border-right-color: #176b87;
+}
+tr:first-child {
+  border-top: solid;
+  border-top-color: #176b87;
+}
+tr:nth-child(3n) td {
+  border-bottom: solid;
+  border-bottom-color: #176b87;
+}
