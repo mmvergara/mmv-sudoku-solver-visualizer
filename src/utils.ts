@@ -1,3 +1,4 @@
+import { sudokuGrids } from "./components/sudokuGrids";
 export const wait = async (ms: number) => {
   return new Promise((resolve) => setTimeout(resolve, ms));
 };
@@ -23,5 +24,8 @@ export const isValid = (
 
   return notInRow && notInColumn && notInBox;
 };
-
-
+export const getRandomGrid = () => {
+  const randomIndex =
+    Math.floor(Math.random() * sudokuGrids.length) % sudokuGrids.length;
+  return sudokuGrids[randomIndex];
+};

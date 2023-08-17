@@ -17,10 +17,10 @@ const Grid = ({ sudokuGrid, activeCell }: props) => {
                   activeCell && activeCell[0] === r && activeCell[1] === c;
                 let color = "";
                 if (inRow) {
-                  color = "row-h";
+                  // color = "row-h";
                 }
                 if (inCol) {
-                  color = "col-h";
+                  // color = "col-h";
                 }
                 if (isExact) {
                   color = "exact-h";

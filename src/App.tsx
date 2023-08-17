@@ -1,24 +1,16 @@
 import "./App.css";
 import Grid from "./components/grid";
 import { useState } from "react";
-import { isValid, wait } from "./utils";
+import { getRandomGrid, isValid, wait } from "./utils";
 
 function App() {
-  const [grid, setGrid] = useState<number[][]>([
-    [8, 0, 0, 0, 0, 0, 7, 0, 6],
-    [0, 7, 0, 6, 0, 4, 0, 0, 0],
-    [0, 6, 2, 0, 0, 0, 0, 9, 0],
-    [0, 0, 0, 0, 0, 5, 0, 0, 8],
-    [0, 0, 5, 0, 1, 0, 0, 0, 0],
-    [0, 9, 0, 8, 0, 7, 0, 0, 0],
-    [6, 0, 0, 0, 0, 0, 2, 0, 0],
-    [0, 0, 0, 7, 0, 0, 0, 4, 0],
-    [0, 0, 0, 0, 8, 0, 6, 0, 7],
-  ]);
+  const [grid, setGrid] = useState<number[][] | undefined>(getRandomGrid());
   const [isSolving, setIsSolving] = useState<boolean>(false);
   const [activeCell, setActiveCell] = useState<number[] | null>(null); // [row, col]
   const [status, setStatus] = useState<string>("");
   const [speed, setSpeed] = useState<number>(1);
+
+  if (!grid) return null;
   const solve = async (
     grid: number[][],
     r: number,
